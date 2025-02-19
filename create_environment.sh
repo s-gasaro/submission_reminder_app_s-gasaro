@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#Ask for the user"s name to create a personalized directory
+#Asking  for the username to create my directory
 read -p "Enter your name: " username
 mkdir -p "submission_reminder_$username"
 cd "submission_reminder_$username"
  
 
-#make the first file
+#making the first subdirectory and the first file
 mkdir -p modules
 cat > modules/functions.sh << 'EOF'
 #!/bin/bash
@@ -31,10 +31,10 @@ function check_submissions {
 }
 EOF
 
-#make it executable
+#to make it executable
 chmod +x modules/functions.sh
 
-#creating the second file
+#creating the second subdirectory and its file
 mkdir -p assets
 cat > assets/submissions.txt << 'EOF'
 Student, assignment, submission status
@@ -50,10 +50,10 @@ Malle, Intro to Linux, submitted
 Nnamdi, Shell Loops, not submitted
 EOF
 
-#make it executable
+#to make it executable
 chmod +x assets/submissions.txt
 
-#creating the third  file
+#creating the third subdirectory and its  file
 mkdir -p config
 cat > config/config.env << 'EOF'
 # This is the config file
@@ -61,10 +61,10 @@ ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
 
-#make it executable
+#to make it executable
 chmod +x config/config.env
 
-#creating the fourth file
+#creating the fourth subdirectory and its  file
 mkdir -p app
 cat > app/reminder.sh << 'EOF'
 #!/bin/bash
@@ -84,10 +84,10 @@ echo "--------------------------------------------"
 check_submissions $submissions_file
 EOF
 
-#make it executable
+#making  it executable
 chmod +x app/reminder.sh
 
-#create the last file
+#creating  the last file
 cat > startup.sh << 'EOF'
 #!/bin/bash
 cd app
